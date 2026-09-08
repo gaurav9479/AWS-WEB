@@ -3,42 +3,20 @@ import { motion } from 'framer-motion'
 import Reveal from './common/Reveal'
 import { staggerContainer, staggerItem } from './common/motion'
 
-// Replace with real past-event data as it becomes available.
 const EVENTS = [
   {
-    name: 'Cloud Sprint 1.0',
-    date: 'Feb 2025',
-    stat: '120+ builders',
-    body: 'Our first campus-wide build weekend — teams shipped 30 working prototypes in 24 hours.',
+    name: 'AWS Cloud Club Induction Workshop',
+    date: '21 Dec 2025',
+    stat: 'Cloud & DevOps',
+    body: 'The AWS Cloud Club Induction Workshop introduced students to cloud fundamentals and scalable system concepts through expert talks, AWS tools, practical industry workflows, career guidance, and learning paths in Cloud Computing and DevOps.',
     gradient: 'from-pink-500/70 to-navy-900',
   },
   {
-    name: 'Serverless Saturday',
-    date: 'Apr 2025',
-    stat: '18 workshops',
-    body: 'A single-day deep dive into Lambda and API Gateway, capped with a mini build sprint.',
+    name: 'AWS OPS-48',
+    date: 'Mar 1–3, 2026',
+    stat: '400+ participants',
+    body: 'OPS-48 was a 48-hour online hackathon organized by the AWS Cloud Club at MNNIT Allahabad. The event featured AI/ML, Cybersecurity, Blockchain/Web3, and Full-Stack tracks with mandatory AWS usage.',
     gradient: 'from-navy-600 to-navy-900',
-  },
-  {
-    name: 'Build Night: ML Edition',
-    date: 'Aug 2025',
-    stat: '40 teams',
-    body: 'An evening hackathon focused on shipping small, useful ML-powered tools.',
-    gradient: 'from-pink-400/60 to-navy-900',
-  },
-  {
-    name: 'SBG Orientation Hack',
-    date: 'Sep 2025',
-    stat: '200+ attendees',
-    body: 'First-years met the club and shipped their first project in a single afternoon.',
-    gradient: 'from-navy-600 to-navy-900',
-  },
-  {
-    name: 'Cloud Sprint 2.0',
-    date: 'Jan 2026',
-    stat: '150+ builders',
-    body: 'Round two of our flagship build weekend, now with an alumni mentor track.',
-    gradient: 'from-pink-500/70 to-navy-900',
   },
 ]
 
@@ -48,7 +26,11 @@ export default function PastEvents() {
   const scrollByCards = (dir) => {
     const el = scrollerRef.current
     if (!el) return
-    el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: 'smooth' })
+
+    el.scrollBy({
+      left: dir * (el.clientWidth * 0.8),
+      behavior: 'smooth',
+    })
   }
 
   return (
@@ -59,12 +41,13 @@ export default function PastEvents() {
             <Reveal as="p" className="text-sm font-medium text-pink-500">
               Our past events
             </Reveal>
+
             <Reveal
               as="h2"
               delay={0.05}
               className="text-balance mt-4 font-display text-3xl font-semibold leading-tight text-navy-900 sm:text-4xl"
             >
-              A few builds we're proud of
+              Events that brought builders together
             </Reveal>
           </div>
 
@@ -77,6 +60,7 @@ export default function PastEvents() {
             >
               <ArrowIcon flip />
             </button>
+
             <button
               type="button"
               aria-label="Scroll past events right"
@@ -103,16 +87,28 @@ export default function PastEvents() {
               whileHover={{ y: -6 }}
               className="w-[78%] flex-none snap-start overflow-hidden rounded-3xl border border-navy-900/10 bg-white shadow-sm transition-shadow hover:shadow-lg sm:w-[45%] lg:w-[31%]"
             >
-              <div className={`relative aspect-[16/10] bg-gradient-to-br ${ev.gradient} p-5`}>
+              <div
+                className={`relative aspect-[16/10] bg-gradient-to-br ${ev.gradient} p-5`}
+              >
                 <div className="absolute inset-0 bg-grid opacity-20" />
+
                 <span className="relative rounded-full bg-navy-900/40 px-3 py-1 text-xs text-white backdrop-blur">
                   {ev.date}
                 </span>
               </div>
+
               <div className="p-6">
-                <p className="font-display text-lg font-semibold text-navy-900">{ev.name}</p>
-                <p className="mt-2 text-sm leading-relaxed text-navy-700/80">{ev.body}</p>
-                <p className="mt-4 text-xs font-medium text-pink-500">{ev.stat}</p>
+                <p className="font-display text-lg font-semibold text-navy-900">
+                  {ev.name}
+                </p>
+
+                <p className="mt-2 text-sm leading-relaxed text-navy-700/80">
+                  {ev.body}
+                </p>
+
+                <p className="mt-4 text-xs font-medium text-pink-500">
+                  {ev.stat}
+                </p>
               </div>
             </motion.article>
           ))}
