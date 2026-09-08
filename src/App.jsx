@@ -4,6 +4,8 @@ import AboutClub from './components/AboutClub'
 import PastEvents from './components/PastEvents'
 import ApplyNow from './components/ApplyNow'
 import FAQ from './components/FAQ'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
@@ -42,14 +44,18 @@ function PageSection({ children, index }) {
 
 function App() {
   return (
-    <main className="relative bg-navy-950 overflow-hidden">
-      <PageSection index={1}><Hero /></PageSection>
-      <PageSection index={2}><AboutEvent /></PageSection>
-      <PageSection index={3}><AboutClub /></PageSection>
-      <PageSection index={4}><PastEvents /></PageSection>
-      <PageSection index={5}><ApplyNow /></PageSection>
-      <PageSection index={6}><FAQ /></PageSection>
-    </main>
+    <div className="relative min-h-screen bg-navy-950 text-cream">
+      <Navbar />
+      <main className="relative bg-navy-950 overflow-hidden">
+        <PageSection index={1}><Hero /></PageSection>
+        <PageSection index={2}><AboutEvent /></PageSection>
+        <PageSection index={3}><AboutClub /></PageSection>
+        <PageSection index={4}><PastEvents /></PageSection>
+        <PageSection index={5}><ApplyNow /></PageSection>
+        <PageSection index={6}><FAQ /></PageSection>
+        <PageSection index={7}><Footer /></PageSection>
+      </main>
+    </div>
   )
 }
 

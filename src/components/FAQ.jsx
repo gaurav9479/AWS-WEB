@@ -37,7 +37,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section className="relative bg-navy-900 py-24 sm:py-32">
+    <section id="faq" className="relative bg-navy-900 py-24 sm:py-32">
       <div className="mx-auto max-w-3xl px-6">
         <Reveal as="p" className="text-center text-sm font-medium text-pink-400">
           FAQ

@@ -52,7 +52,7 @@ export default function PastEvents() {
   }
 
   return (
-    <section className="relative bg-cream py-24 sm:py-32">
+    <section id="past-events" className="relative bg-cream py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">

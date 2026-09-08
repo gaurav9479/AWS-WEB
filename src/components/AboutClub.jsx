@@ -93,7 +93,7 @@ function SpotlightCard({ card }) {
 
 export default function AboutClub() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
+    <section id="about-club" className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
       <div className="pointer-events-none absolute top-0 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-navy-600/40 blur-[140px]" />
 
