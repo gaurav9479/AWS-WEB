@@ -5,7 +5,7 @@ import { APPLY_URL } from '../config'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 pt-36 pb-24 sm:pt-44 sm:pb-32">
+    <section id="hero" className="relative overflow-hidden bg-navy-900 pt-36 pb-24 sm:pt-44 sm:pb-32">
       {/* background treatment */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.35] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
       <motion.div 

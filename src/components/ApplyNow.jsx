@@ -11,7 +11,7 @@ const DETAILS = [
 
 export default function ApplyNow() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
+    <section id="apply-now" className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
       <motion.div 
         animate={{ scale: [1, 1.15, 0.9, 1], rotate: [0, 90, -90, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
