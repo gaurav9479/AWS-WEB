@@ -23,7 +23,7 @@ export default function Navbar() {
         setScrolled(false)
       }
 
-    
+
       const scrollPos = window.scrollY + 120
       const sectionIds = NAV_LINKS.map((link) => link.href.replace('#', ''))
 
@@ -77,20 +77,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-navy-950/85 backdrop-blur-md py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-b border-navy-800/80'
           : 'bg-gradient-to-b from-navy-950/90 via-navy-950/40 to-transparent py-5'
-      }`}
+        }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-        {}
+        { }
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, '#hero')}
           className="group flex items-center gap-3 transition"
         >
-          {}
+          { }
           <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 to-navy-800 p-0.5 shadow-[0_0_15px_rgba(255,47,126,0.3)] transition duration-300 group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(255,47,126,0.5)]">
             <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-navy-950 text-white">
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-pink-400">
@@ -104,11 +103,11 @@ export default function Navbar() {
               <span className="font-display text-lg font-bold tracking-tight text-white">
                 SBG<span className="text-pink-400">.</span>
               </span>
-              <span className="rounded-full bg-pink-500/15 px-2 py-0.5 text-[10px] font-semibold text-pink-400 border border-pink-500/30">
+              <span className="rounded-full bg-pink-500/15 px-2 py-0.5 text-[12px] font-semibold text-pink-400 border border-pink-500/30">
                 MNNIT
               </span>
             </div>
-            <span className="text-[11px] font-medium tracking-wider text-navy-200 uppercase">
+            <span className="text-[13px] font-medium tracking-wider text-navy-200 uppercase">
               AWS Student Builder Group
             </span>
           </div>
@@ -124,11 +123,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative text-sm font-medium transition-colors duration-200 ${
-                  isActive
+                className={`relative text-sm font-medium transition-colors duration-200 ${isActive
                     ? 'text-white font-semibold'
                     : 'text-navy-200 hover:text-white'
-                }`}
+                  }`}
               >
                 {link.name}
                 {isActive && (
@@ -201,11 +199,10 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className={`text-base font-medium transition-all ${
-                      isActive
+                    className={`text-base font-medium transition-all ${isActive
                         ? 'text-pink-400 font-semibold pl-2 border-l-2 border-pink-500'
                         : 'text-navy-200 hover:text-pink-400'
-                    }`}
+                      }`}
                   >
                     {link.name}
                   </a>

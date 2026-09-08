@@ -97,7 +97,7 @@ export default function OrbitChip() {
         transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <span className="font-display text-lg font-semibold text-white sm:text-xl">SBG</span>
-        <span className="mt-0.5 text-[10px] tracking-wide text-navy-200 sm:text-xs">Hackfest</span>
+        <span className="mt-0.5 text-[12px] tracking-wide text-navy-200 sm:text-xs">Hackfest</span>
       </motion.div>
     </div>
   )

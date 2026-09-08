@@ -51,7 +51,7 @@ export default function Footer() {
               </div>
 
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-200/90">
-                Empowering student builders at MNNIT Allahabad through hands-on cloud computing, 
+                Empowering student builders at MNNIT Allahabad through hands-on cloud computing,
                 collaborative build sprints, and real-world project experience.
               </p>
 

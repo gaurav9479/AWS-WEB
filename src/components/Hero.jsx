@@ -8,15 +8,15 @@ export default function Hero() {
     <section id="hero" className="relative overflow-hidden bg-navy-900 pt-36 pb-24 sm:pt-44 sm:pb-32">
       {/* background treatment */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.35] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
-      <motion.div 
+      <motion.div
         animate={{ x: [0, 40, -20, 0], y: [0, -50, 20, 0], scale: [1, 1.1, 0.9, 1] }}
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-pink-500/25 blur-[140px]" 
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-pink-500/25 blur-[140px]"
       />
-      <motion.div 
+      <motion.div
         animate={{ x: [0, -30, 20, 0], y: [0, 40, -20, 0], scale: [1, 1.05, 0.95, 1] }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="pointer-events-none absolute top-1/3 left-[-10%] h-[420px] w-[420px] rounded-full bg-navy-600/40 blur-[130px]" 
+        className="pointer-events-none absolute top-1/3 left-[-10%] h-[420px] w-[420px] rounded-full bg-navy-600/40 blur-[130px]"
       />
 
       <motion.div

@@ -12,7 +12,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 // Wrapper for the "Layered Cards" scroll effect that supports tall content
 function PageSection({ children, index }) {
   const ref = useRef(null)
-  
+
   // Track scroll progress of this specific section from when its top hits the viewport
   // until its bottom leaves the viewport
   const { scrollYProgress } = useScroll({
@@ -27,13 +27,13 @@ function PageSection({ children, index }) {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4])
 
   return (
-    <motion.div 
-      ref={ref} 
+    <motion.div
+      ref={ref}
       className="relative w-full"
       style={{ zIndex: index }}
     >
-      <motion.div 
-        style={{ y, scale, opacity }} 
+      <motion.div
+        style={{ y, scale, opacity }}
         className="w-full origin-top bg-navy-900 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
       >
         {children}
