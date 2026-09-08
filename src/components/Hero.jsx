@@ -44,9 +44,9 @@ export default function Hero() {
           variants={staggerItem}
           className="text-balance mt-6 max-w-xl text-base text-navy-200 sm:text-lg"
         >
-          A weekend for MNNIT students to turn rough ideas into working
-          builds — ship a project, learn from mentors, and meet the rest of
-          the campus builder community.
+          A hackathon for MNNIT students to turn ideas into working
+          builds — collaborate, learn, and create something meaningful
+          with the campus builder community.
         </motion.p>
 
         <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center justify-center gap-4">
