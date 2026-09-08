@@ -7,27 +7,33 @@ import FAQ from './components/FAQ'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-// Wrapper for the "Layered/Stacked Cards" scroll effect
+// Wrapper for the "Layered Cards" scroll effect that supports tall content
 function PageSection({ children, index }) {
   const ref = useRef(null)
   
-  // Track scroll progress of this specific section
+  // Track scroll progress of this specific section from when its top hits the viewport
+  // until its bottom leaves the viewport
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start']
   })
 
-  // Scale down and fade out the section as the next one scrolls over it
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2])
+  // Parallax overlap: slow down its upward scroll (y) and shrink it
+  // so the next section smoothly slides over it
+  const y = useTransform(scrollYProgress, [0, 1], [0, 150])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9])
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.4])
 
   return (
     <motion.div 
       ref={ref} 
-      className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-navy-900 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
+      className="relative w-full"
       style={{ zIndex: index }}
     >
-      <motion.div style={{ scale, opacity }} className="h-full w-full overflow-y-auto no-scrollbar">
+      <motion.div 
+        style={{ y, scale, opacity }} 
+        className="w-full origin-top bg-navy-900 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
+      >
         {children}
       </motion.div>
     </motion.div>
@@ -36,7 +42,7 @@ function PageSection({ children, index }) {
 
 function App() {
   return (
-    <main className="relative bg-navy-950">
+    <main className="relative bg-navy-950 overflow-hidden">
       <PageSection index={1}><Hero /></PageSection>
       <PageSection index={2}><AboutEvent /></PageSection>
       <PageSection index={3}><AboutClub /></PageSection>
