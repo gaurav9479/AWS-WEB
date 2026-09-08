@@ -78,8 +78,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-navy-950/85 backdrop-blur-md py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-b border-navy-800/80'
-          : 'bg-gradient-to-b from-navy-950/90 via-navy-950/40 to-transparent py-5'
+        ? 'bg-navy-950/85 backdrop-blur-md py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-b border-navy-800/80'
+        : 'bg-gradient-to-b from-navy-950/90 via-navy-950/40 to-transparent py-5'
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -124,8 +124,8 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`relative text-sm font-medium transition-colors duration-200 ${isActive
-                    ? 'text-white font-semibold'
-                    : 'text-navy-200 hover:text-white'
+                  ? 'text-white font-semibold'
+                  : 'text-navy-200 hover:text-white'
                   }`}
               >
                 {link.name}
@@ -200,8 +200,8 @@ export default function Navbar() {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`text-base font-medium transition-all ${isActive
-                        ? 'text-pink-400 font-semibold pl-2 border-l-2 border-pink-500'
-                        : 'text-navy-200 hover:text-pink-400'
+                      ? 'text-pink-400 font-semibold pl-2 border-l-2 border-pink-500'
+                      : 'text-navy-200 hover:text-pink-400'
                       }`}
                   >
                     {link.name}
