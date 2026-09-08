@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Reveal from './common/Reveal'
 import { staggerContainer, staggerItem } from './common/motion'
+import { useRef } from 'react'
 
 const CARDS = [
   {
@@ -42,6 +43,54 @@ function CardIcon({ children }) {
   )
 }
 
+function SpotlightCard({ card }) {
+  const divRef = useRef(null)
+
+  const handleMouseMove = (e) => {
+    if (!divRef.current) return
+    const rect = divRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    divRef.current.style.setProperty('--mouse-x', `${x}px`)
+    divRef.current.style.setProperty('--mouse-y', `${y}px`)
+  }
+
+  return (
+    <motion.div
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      variants={staggerItem}
+      whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
+      className={`group relative overflow-hidden rounded-2xl border border-navy-700 bg-navy-800/60 transition-colors hover:border-pink-500/50 hover:bg-navy-800 ${card.span ?? ''}`}
+    >
+      {/* Spotlight Glow */}
+      <div 
+        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 47, 126, 0.15), transparent 40%)`,
+        }}
+      />
+      {/* Border Highlight Glow */}
+      <div 
+        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(200px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.3), transparent 40%)`,
+          WebkitMaskImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'none\' rx=\'16\' ry=\'16\' stroke=\'%23000\' stroke-width=\'2\'/%3E%3C/svg%3E")',
+          maskImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'none\' rx=\'16\' ry=\'16\' stroke=\'%23000\' stroke-width=\'2\'/%3E%3C/svg%3E")'
+        }}
+      />
+      
+      <div className="relative z-10 h-full w-full p-6">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-700 text-pink-300 transition group-hover:scale-110 group-hover:bg-pink-500/20 group-hover:text-pink-400">
+          <CardIcon>{card.icon}</CardIcon>
+        </div>
+        <p className="mt-4 font-display text-lg font-semibold text-white">{card.title}</p>
+        <p className="mt-2 text-sm leading-relaxed text-navy-200">{card.body}</p>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function AboutClub() {
   return (
     <section className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
@@ -75,17 +124,7 @@ export default function AboutClub() {
           className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {CARDS.map((c) => (
-            <motion.div
-              key={c.title}
-              variants={staggerItem}
-              className={`group rounded-2xl border border-navy-700 bg-navy-800/60 p-6 transition hover:border-pink-500/40 hover:bg-navy-800 ${c.span ?? ''}`}
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-700 text-pink-300 transition group-hover:bg-pink-500/15">
-                <CardIcon>{c.icon}</CardIcon>
-              </div>
-              <p className="mt-4 font-display text-lg font-semibold text-white">{c.title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-navy-200">{c.body}</p>
-            </motion.div>
+            <SpotlightCard key={c.title} card={c} />
           ))}
         </motion.div>
       </div>

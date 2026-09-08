@@ -8,8 +8,16 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-navy-900 pt-36 pb-24 sm:pt-44 sm:pb-32">
       {/* background treatment */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.35] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
-      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-pink-500/25 blur-[140px]" />
-      <div className="pointer-events-none absolute top-1/3 left-[-10%] h-[420px] w-[420px] rounded-full bg-navy-600/40 blur-[130px]" />
+      <motion.div 
+        animate={{ x: [0, 40, -20, 0], y: [0, -50, 20, 0], scale: [1, 1.1, 0.9, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-pink-500/25 blur-[140px]" 
+      />
+      <motion.div 
+        animate={{ x: [0, -30, 20, 0], y: [0, 40, -20, 0], scale: [1, 1.05, 0.95, 1] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute top-1/3 left-[-10%] h-[420px] w-[420px] rounded-full bg-navy-600/40 blur-[130px]" 
+      />
 
       <motion.div
         variants={staggerContainer(0.12, 0.1)}
@@ -42,18 +50,22 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href={APPLY_URL}
             className="rounded-full bg-pink-500 px-7 py-3 text-sm font-medium text-white shadow-[0_0_30px_rgba(255,47,126,0.4)] transition hover:bg-pink-400 hover:shadow-[0_0_40px_rgba(255,47,126,0.55)]"
           >
             Apply now
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="#about-event"
             className="rounded-full border border-navy-600 px-7 py-3 text-sm font-medium text-navy-200 transition hover:border-pink-400/60 hover:text-white"
           >
             What is Hackfest?
-          </a>
+          </motion.a>
         </motion.div>
 
         <motion.div variants={staggerItem} className="mt-16 w-full sm:mt-20">

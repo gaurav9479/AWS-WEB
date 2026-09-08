@@ -12,7 +12,11 @@ const DETAILS = [
 export default function ApplyNow() {
   return (
     <section className="relative overflow-hidden bg-navy-900 py-24 sm:py-32">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500/25 blur-[160px]" />
+      <motion.div 
+        animate={{ scale: [1, 1.15, 0.9, 1], rotate: [0, 90, -90, 0] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500/25 blur-[160px]" 
+      />
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
