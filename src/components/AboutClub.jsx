@@ -105,26 +105,6 @@ function SpotlightCard({ card }) {
         }}
       />
 
-      whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.2 } }}
-      className={`group relative overflow-hidden rounded-2xl border border-navy-700 bg-navy-800/60 transition-colors hover:border-pink-500/50 hover:bg-navy-800 ${card.span ?? ''}`}
-    >
-      {/* Spotlight Glow */}
-      <div 
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 47, 126, 0.15), transparent 40%)`,
-        }}
-      />
-      {/* Border Highlight Glow */}
-      <div 
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(200px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.3), transparent 40%)`,
-          WebkitMaskImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'none\' rx=\'16\' ry=\'16\' stroke=\'%23000\' stroke-width=\'2\'/%3E%3C/svg%3E")',
-          maskImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'none\' rx=\'16\' ry=\'16\' stroke=\'%23000\' stroke-width=\'2\'/%3E%3C/svg%3E")'
-        }}
-      />
-      
       <div className="relative z-10 h-full w-full p-6">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-700 text-pink-300 transition group-hover:scale-110 group-hover:bg-pink-500/20 group-hover:text-pink-400">
           <CardIcon>{card.icon}</CardIcon>
