@@ -1,35 +1,22 @@
 import { motion } from 'framer-motion'
 
-// Six nodes arranged in a hexagon around the centre, in percentage
-// coordinates (viewBox is 0-100) so the whole thing scales fluidly.
+// Six nodes arranged in a hexagon around the centre
 const NODES = [
-  { x: 50, y: 14, icon: 'bolt', label: 'Serverless' },
-  { x: 81.2, y: 32, icon: 'cloud', label: 'Cloud' },
-  { x: 81.2, y: 68, icon: 'db', label: 'Data' },
-  { x: 50, y: 86, icon: 'code', label: 'Build' },
-  { x: 18.8, y: 68, icon: 'network', label: 'Network' },
-  { x: 18.8, y: 32, icon: 'terminal', label: 'Ship' },
+  { x: 50, y: 12, icon: 'bolt', label: 'Serverless', house: 'Gryffindor' },
+  { x: 83, y: 31, icon: 'cloud', label: 'Cloud Spells', house: 'Ravenclaw' },
+  { x: 83, y: 69, icon: 'db', label: 'Runic Data', house: 'Slytherin' },
+  { x: 50, y: 88, icon: 'code', label: 'Build Magic', house: 'Hufflepuff' },
+  { x: 17, y: 69, icon: 'network', label: 'Owl Network', house: 'Gryffindor' },
+  { x: 17, y: 31, icon: 'terminal', label: 'Dev Potions', house: 'Ravenclaw' },
 ]
 
 const icons = {
-  bolt: (
-    <path d="M12 2 4 13h6l-1 9 9-13h-6l1-7Z" />
-  ),
-  cloud: (
-    <path d="M7 17a4 4 0 0 1-.5-7.97A5 5 0 0 1 16 8.06 4.5 4.5 0 0 1 17.5 17H7Z" />
-  ),
-  db: (
-    <path d="M4 6c0-1.66 3.58-3 8-3s8 1.34 8 3-3.58 3-8 3-8-1.34-8-3Zm0 0v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
-  ),
-  code: (
-    <path d="m9 18-6-6 6-6m6 12 6-6-6-6" />
-  ),
-  network: (
-    <path d="M12 2v6m0 0-5 4m5-4 5 4M5 12v6l7 4 7-4v-6" />
-  ),
-  terminal: (
-    <path d="m5 7 5 5-5 5m6 0h8" />
-  ),
+  bolt: <path d="M12 2 4 13h6l-1 9 9-13h-6l1-7Z" />,
+  cloud: <path d="M7 17a4 4 0 0 1-.5-7.97A5 5 0 0 1 16 8.06 4.5 4.5 0 0 1 17.5 17H7Z" />,
+  db: <path d="M4 6c0-1.66 3.58-3 8-3s8 1.34 8 3-3.58 3-8 3-8-1.34-8-3Zm0 0v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />,
+  code: <path d="m9 18-6-6 6-6m6 12 6-6-6-6" />,
+  network: <path d="M12 2v6m0 0-5 4m5-4 5 4M5 12v6l7 4 7-4v-6" />,
+  terminal: <path d="m5 7 5 5-5 5m6 0h8" />,
 }
 
 function NodeIcon({ type }) {
@@ -43,61 +30,77 @@ function NodeIcon({ type }) {
 export default function OrbitChip() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[560px]" aria-hidden="true">
-      {/* ambient glow behind everything */}
-      <div className="absolute inset-[8%] rounded-full bg-pink-500/20 blur-[70px]" />
+      {/* Ambient glowing golden magic halo behind */}
+      <div className="absolute inset-[6%] rounded-full bg-gradient-to-tr from-[#5c3b80]/40 via-[#d4af37]/25 to-transparent blur-[80px]" />
 
       <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible">
         <defs>
-          <linearGradient id="orbit-line" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#ff2f7e" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#ff2f7e" stopOpacity="0" />
+          <linearGradient id="magic-gold-line" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#d4af37" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#9d4edf" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#d4af37" stopOpacity="0.1" />
           </linearGradient>
         </defs>
+
+        {/* Orbit Runic Constellation Lines */}
         {NODES.map((n, i) => (
-          <motion.line
-            key={n.label}
-            x1="50"
-            y1="50"
-            x2={n.x}
-            y2={n.y}
-            stroke="url(#orbit-line)"
-            strokeWidth="0.4"
-            strokeDasharray="4 3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, strokeDashoffset: [0, -14] }}
-            transition={{
-              opacity: { duration: 0.6, delay: 0.5 + i * 0.08 },
-              strokeDashoffset: { duration: 3.2, repeat: Infinity, ease: 'linear' },
-            }}
-          />
+          <g key={n.label}>
+            <motion.line
+              x1="50"
+              y1="50"
+              x2={n.x}
+              y2={n.y}
+              stroke="url(#magic-gold-line)"
+              strokeWidth="0.5"
+              strokeDasharray="3 2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, strokeDashoffset: [0, -12] }}
+              transition={{
+                opacity: { duration: 0.6, delay: 0.4 + i * 0.08 },
+                strokeDashoffset: { duration: 3.5, repeat: Infinity, ease: 'linear' },
+              }}
+            />
+          </g>
         ))}
-        {/* faint orbit ring */}
-        <circle cx="50" cy="50" r="36" fill="none" stroke="#5b6489" strokeOpacity="0.25" strokeWidth="0.3" />
+
+        {/* Inner & Outer Magic Circles */}
+        <circle cx="50" cy="50" r="37" fill="none" stroke="#d4af37" strokeOpacity="0.3" strokeWidth="0.4" strokeDasharray="6 3" />
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#9d4edf" strokeOpacity="0.25" strokeWidth="0.3" />
       </svg>
 
-      {/* orbiting nodes */}
+      {/* Orbiting Runic Nodes */}
       {NODES.map((n, i) => (
         <motion.div
           key={n.label}
-          className="absolute flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border border-navy-600 bg-navy-800/90 text-pink-300 shadow-[0_0_18px_rgba(255,47,126,0.15)] backdrop-blur sm:h-14 sm:w-14"
+          className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2 group"
           style={{ left: `${n.x}%`, top: `${n.y}%` }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.5 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
         >
-          <NodeIcon type={n.icon} />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#d4af37]/60 bg-[#10182b]/95 text-[#f4e8c1] shadow-[0_0_18px_rgba(212,175,55,0.3)] backdrop-blur transition-all duration-300 group-hover:scale-110 group-hover:border-[#f4e8c1] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] sm:h-14 sm:w-14">
+            <NodeIcon type={n.icon} />
+          </div>
+          <span className="mt-1 font-display text-[10px] font-semibold tracking-wider text-[#d4af37] opacity-80 group-hover:opacity-100 sm:text-xs">
+            {n.label}
+          </span>
         </motion.div>
       ))}
 
-      {/* central node */}
+      {/* Central Hogwarts & AWS Matrix Seal */}
       <motion.div
-        className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-2xl border border-pink-500/40 bg-navy-800 shadow-[0_0_50px_rgba(255,47,126,0.35)] sm:h-28 sm:w-28"
+        className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-2xl border-2 border-[#d4af37] bg-gradient-to-br from-[#24170f] via-[#10182b] to-[#080b16] shadow-[0_0_50px_rgba(212,175,55,0.5)] sm:h-32 sm:w-32"
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
-        <span className="font-display text-lg font-semibold text-white sm:text-xl">SBG</span>
-        <span className="mt-0.5 text-[12px] tracking-wide text-navy-200 sm:text-xs">Hackfest</span>
+        <span className="text-xl sm:text-2xl animate-candle">⚡</span>
+        <span className="font-harry text-xl font-bold tracking-wider text-[#d4af37] drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] sm:text-2xl">
+          HOGWARTS
+        </span>
+        <span className="text-[10px] font-bold tracking-widest text-[#f4e8c1] uppercase sm:text-[11px]">
+          AWS HACKFEST
+        </span>
       </motion.div>
     </div>
   )

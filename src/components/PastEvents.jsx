@@ -3,20 +3,40 @@ import { motion } from 'framer-motion'
 import Reveal from './common/Reveal'
 import { staggerContainer, staggerItem } from './common/motion'
 
+// Vector SVG Icons
+const Icons = {
+  Train: (
+    <svg className="h-7 w-7 text-[#d4af37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="3" width="16" height="16" rx="2" />
+      <path d="M4 11h16" />
+      <path d="M12 3v8" />
+      <path d="m8 19-3 3" />
+      <path d="m16 19 3 3" />
+      <circle cx="8" cy="15" r="1" />
+      <circle cx="16" cy="15" r="1" />
+    </svg>
+  ),
+  Lightning: (
+    <svg className="h-4 w-4 text-[#d4af37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  ),
+}
+
 const EVENTS = [
   {
     name: 'AWS Cloud Club Induction Workshop',
     date: '21 Dec 2025',
-    stat: 'Cloud & DevOps',
-    body: 'The AWS Cloud Club Induction Workshop introduced students to cloud fundamentals and scalable system concepts through expert talks, AWS tools, practical industry workflows, career guidance, and learning paths in Cloud Computing and DevOps.',
-    gradient: 'from-pink-500/70 to-navy-900',
+    stat: 'Cloud & DevOps Mastery',
+    body: 'The AWS Cloud Club Induction Workshop introduced wizards to cloud fundamentals and scalable system concepts through expert talks, AWS tools, practical industry workflows, and wizarding learning paths in Cloud Computing and DevOps.',
+    icon: Icons.Train,
   },
   {
-    name: 'AWS OPS-48',
+    name: 'AWS OPS-48 Hackathon',
     date: 'Mar 1–3, 2026',
-    stat: '400+ participants',
-    body: 'OPS-48 was a 48-hour online hackathon organized by the AWS Cloud Club at MNNIT Allahabad. The event featured AI/ML, Cybersecurity, Blockchain/Web3, and Full-Stack tracks with mandatory AWS usage.',
-    gradient: 'from-navy-600 to-navy-900',
+    stat: '400+ Participating Wizards',
+    body: 'OPS-48 was a 48-hour online spellcraft hackathon organized by the AWS Cloud Club at MNNIT Allahabad. The event featured AI/ML, Cybersecurity, Blockchain/Web3, and Full-Stack tracks with mandatory AWS cloud integration.',
+    icon: Icons.Lightning,
   },
 ]
 
@@ -26,7 +46,6 @@ export default function PastEvents() {
   const scrollByCards = (dir) => {
     const el = scrollerRef.current
     if (!el) return
-
     el.scrollBy({
       left: dir * (el.clientWidth * 0.8),
       behavior: 'smooth',
@@ -34,20 +53,37 @@ export default function PastEvents() {
   }
 
   return (
-    <section id="past-events" className="relative bg-cream py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="past-events" className="relative overflow-hidden bg-[#080b16] py-24 sm:py-32 border-t border-[#d4af37]/20">
+      {/* Real Vivid Hogwarts Express Steam Train Background Image */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.img
+          initial={{ scale: 1.05, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 0.98 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.8, ease: 'easeOut' }}
+          src="/images/hogwarts_express_steam_train_bg.jpg"
+          alt="Hogwarts Express Steam Train"
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080b16]/80 via-[#080b16]/65 to-[#080b16]" />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 bg-hogwarts-grid opacity-20 z-0" />
+
+      <div className="relative mx-auto max-w-6xl px-6 z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
-            <Reveal as="p" className="text-sm font-medium text-pink-500">
-              Our past events
+            <Reveal as="div" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#d4af37] border border-[#d4af37]/50 rounded-full px-4 py-1.5 bg-[#10182b]/80 backdrop-blur-md">
+              {Icons.Train}
+              <span>JOURNEY THROUGH PAST EVENTS</span>
             </Reveal>
 
             <Reveal
               as="h2"
               delay={0.05}
-              className="text-balance mt-4 font-display text-3xl font-semibold leading-tight text-navy-900 sm:text-4xl"
+              className="mt-3 font-harry text-4xl font-bold text-[#f4e8c1] sm:text-6xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
             >
-              Events that brought builders together
+              HOGWARTS EXPRESS
             </Reveal>
           </div>
 
@@ -56,7 +92,7 @@ export default function PastEvents() {
               type="button"
               aria-label="Scroll past events left"
               onClick={() => scrollByCards(-1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-900/15 text-navy-900 transition hover:border-pink-500 hover:text-pink-500"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d4af37]/60 text-[#d4af37] bg-[#10182b]/80 backdrop-blur-md transition hover:border-[#f4e8c1] hover:bg-[#d4af37]/20"
             >
               <ArrowIcon flip />
             </button>
@@ -65,7 +101,7 @@ export default function PastEvents() {
               type="button"
               aria-label="Scroll past events right"
               onClick={() => scrollByCards(1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-900/15 text-navy-900 transition hover:border-pink-500 hover:text-pink-500"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d4af37]/60 text-[#d4af37] bg-[#10182b]/80 backdrop-blur-md transition hover:border-[#f4e8c1] hover:bg-[#d4af37]/20"
             >
               <ArrowIcon />
             </button>
@@ -78,37 +114,35 @@ export default function PastEvents() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4"
+          className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
         >
           {EVENTS.map((ev) => (
             <motion.article
               key={ev.name}
               variants={staggerItem}
-              whileHover={{ y: -6 }}
-              className="w-[78%] flex-none snap-start overflow-hidden rounded-3xl border border-navy-900/10 bg-white shadow-sm transition-shadow hover:shadow-lg sm:w-[45%] lg:w-[31%]"
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="w-[85%] flex-none snap-start overflow-hidden rounded-xl border border-[#d4af37]/50 bg-gradient-to-b from-[#10182b]/95 via-[#24170f]/90 to-[#080b16]/95 p-6 shadow-[0_0_25px_rgba(212,175,55,0.25)] backdrop-blur-md transition hover:border-[#d4af37] sm:w-[48%] lg:w-[45%]"
             >
-              <div
-                className={`relative aspect-[16/10] bg-gradient-to-br ${ev.gradient} p-5`}
-              >
-                <div className="absolute inset-0 bg-grid opacity-20" />
-
-                <span className="relative rounded-full bg-navy-900/40 px-3 py-1 text-xs text-white backdrop-blur">
+              <div className="flex items-center justify-between border-b border-[#d4af37]/30 pb-4">
+                <div>{ev.icon}</div>
+                <span className="rounded-full border border-[#d4af37]/50 bg-[#080b16] px-3 py-1 text-xs font-semibold text-[#d4af37]">
                   {ev.date}
                 </span>
               </div>
 
-              <div className="p-6">
-                <p className="font-display text-lg font-semibold text-navy-900">
+              <div className="mt-5">
+                <h3 className="font-harry text-3xl font-bold text-[#f4e8c1]">
                   {ev.name}
-                </p>
+                </h3>
 
-                <p className="mt-2 text-sm leading-relaxed text-navy-700/80">
+                <p className="mt-3 text-xs leading-relaxed text-[#e8d7b5] font-sans">
                   {ev.body}
                 </p>
 
-                <p className="mt-4 text-xs font-medium text-pink-500">
-                  {ev.stat}
-                </p>
+                <div className="mt-5 inline-flex items-center gap-1.5 rounded bg-[#d4af37]/15 px-3 py-1 text-xs font-bold text-[#d4af37] border border-[#d4af37]/40">
+                  {Icons.Lightning}
+                  <span>{ev.stat}</span>
+                </div>
               </div>
             </motion.article>
           ))}
@@ -124,10 +158,10 @@ function ArrowIcon({ flip = false }) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.8"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={`h-4 w-4 ${flip ? 'rotate-180' : ''}`}
+      className={`h-5 w-5 ${flip ? 'rotate-180' : ''}`}
     >
       <path d="M5 12h14m0 0-6-6m6 6-6 6" />
     </svg>
