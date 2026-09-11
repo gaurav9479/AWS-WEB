@@ -238,15 +238,6 @@ export default function SortingCeremony() {
             </p>
           </div>
         </Reveal>
-                  <div className="mt-6 rounded-xl border border-[#d4af37]/50 bg-[#24170f]/90 p-5 text-left text-xs font-sans space-y-2">
-                    <p className="text-[#f4e8c1]"><strong>Allocated House:</strong> {sortedResult?.name}</p>
-                    <p className="text-[#f4e8c1]"><strong>Team Leader:</strong> {regData.leaderName} ({regData.leaderEmail})</p>
-                    <p className="text-[#f4e8c1]"><strong>Track:</strong> {regData.track}</p>
-                    <p className="text-[#d4af37] text-[11px] pt-2 border-t border-[#d4af37]/30">
-                      ✨ Your team is now registered for Round 1 (The Triwizard Challenge). Check your inbox for trial schedule details!
-                    </p>
-                  </div>
-
       </div>
     </section>
   )

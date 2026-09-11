@@ -178,7 +178,7 @@ export default function AboutEvent() {
               as="p"
               className="text-base font-serif leading-relaxed text-[#e8d7b5]/90 sm:text-lg"
             >
-              Hackfest 2026 is a Harry Potter-themed 72-hour online
+              Hackfest 2026  72-hour online
               hackathon presented by the AWS Student Builder Group at
               MNNIT Allahabad. Undergraduate witches and wizards wield
               AWS's Magic Infrastructure across AI/ML, Cloud, DevOps,

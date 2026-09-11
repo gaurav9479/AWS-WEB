@@ -106,7 +106,7 @@ export default function Hero() {
           variants={staggerItem}
           className="mt-6 max-w-2xl rounded-xl border border-[#d4af37]/30 bg-[#080b16]/50 p-4 font-serif text-base leading-relaxed text-[#ffffff] drop-shadow-[0_3px_10px_rgba(0,0,0,0.98)] backdrop-blur-sm sm:text-xl"
         >
-          A Harry Potter-themed 72-hour online hackathon where
+          A  72-hour online hackathon where
           undergraduate witches and wizards wield AWS's Magic
           Infrastructure across AI/ML, Cloud, DevOps, and Cybersecurity
           to solve real-world challenges.
