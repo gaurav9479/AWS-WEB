@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -8,86 +8,163 @@
 }
 
 @theme {
-  --font-display: "Harry P", "Cinzel", Georgia, serif;
-  --font-body: "Cormorant Garamond", Georgia, serif;
+  --font-harry: "Harry P", "Cinzel", Georgia, serif;
+  --font-display: "Cinzel", "Harry P", Georgia, serif;
+  --font-body: "Inter", "Cormorant Garamond", Georgia, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
 
-  --text-xs: calc(0.75rem + 2px);
-  --text-sm: calc(0.875rem + 2px);
-  --text-base: calc(1rem + 2px);
-  --text-lg: calc(1.125rem + 2px);
-  --text-xl: calc(1.25rem + 2px);
-  --text-2xl: calc(1.5rem + 2px);
-  --text-3xl: calc(1.875rem + 2px);
-  --text-4xl: calc(2.25rem + 2px);
-  --text-5xl: calc(3rem + 2px);
-  --text-6xl: calc(3.75rem + 2px);
-  --text-7xl: calc(4.5rem + 2px);
+  --color-hogwarts-bg: #080b16;
+  --color-hogwarts-card: #10182b;
+  --color-hogwarts-dark: #05070f;
+  --color-gold-300: #f4e8c1;
+  --color-gold-400: #e5c158;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b89228;
+  --color-gold-700: #8c6a15;
+  --color-parchment-100: #f9f5ea;
+  --color-parchment-200: #e8d7b5;
+  --color-parchment-300: #d8c29b;
+  --color-parchment-900: #24170f;
+  --color-magic-purple: #5c3b80;
+  --color-magic-glow: #9d4edf;
 
-  --color-navy-950: #05070f;
-  --color-navy-900: #0a0e1f;
-  --color-navy-800: #10152c;
-  --color-navy-700: #182042;
-  --color-navy-600: #232c54;
-  --color-navy-400: #5b6489;
-  --color-navy-200: #aeb4cf;
-
-  --color-pink-500: #ff2f7e;
-  --color-pink-400: #ff5d97;
-  --color-pink-300: #ff8fb8;
-  --color-pink-200: #ffc2d9;
-
-  --color-cream: #f6f4f8;
+  --color-gryffindor-red: #740001;
+  --color-gryffindor-gold: #d3a625;
+  --color-slytherin-green: #1a472a;
+  --color-slytherin-silver: #aaaaaa;
+  --color-ravenclaw-blue: #0e1a40;
+  --color-ravenclaw-bronze: #946b2d;
+  --color-hufflepuff-yellow: #ecb939;
+  --color-hufflepuff-black: #372e29;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #080b16;
+  color: #e8d7b5;
 }
 
 body {
-  background-color: var(--color-navy-950);
-  color: var(--color-cream);
+  background-color: #080b16;
+  color: #e8d7b5;
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: 17px;
+  line-height: 1.6;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
+.font-harry {
+  font-family: var(--font-harry);
+}
+
+h1, h2, h3 {
   font-family: var(--font-display);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
 ::selection {
-  background: var(--color-pink-500);
-  color: white;
+  background: #d4af37;
+  color: #080b16;
 }
 
-.text-balance {
-  text-wrap: balance;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #080b16;
+}
+::-webkit-scrollbar-thumb {
+  background: #24170f;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }
 
-/* Subtle grid texture used as a background layer. */
-.bg-grid {
+/* Parchment Card Aesthetic */
+.parchment-card {
+  background: linear-gradient(135deg, rgba(232, 215, 181, 0.06) 0%, rgba(16, 24, 43, 0.85) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(212, 175, 55, 0.03);
+  position: relative;
+}
+
+.parchment-card-light {
+  background: linear-gradient(135deg, #f7efe1 0%, #e8d7b5 100%);
+  color: #24170f;
+  border: 2px solid #b89228;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(184, 146, 40, 0.2);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(180deg, #fff 0%, #f4e8c1 40%, #d4af37 80%, #9a781d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.magic-purple-text {
+  background: linear-gradient(180deg, #e0aaff 0%, #c77dff 50%, #9d4edf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle grid texture layer */
+.bg-hogwarts-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 44px 44px;
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+}
+
+/* Keyframes for flickering candles & stars */
+@keyframes candleFlicker {
+  0%, 100% { opacity: 0.9; transform: scale(1) translateY(0); }
+  25% { opacity: 0.75; transform: scale(0.97) translateY(1px); }
+  50% { opacity: 1; transform: scale(1.04) translateY(-1px); }
+  75% { opacity: 0.85; transform: scale(0.98) translateY(0.5px); }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes magicFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.animate-candle {
+  animation: candleFlicker 3s infinite ease-in-out;
+}
+
+.animate-star {
+  animation: starTwinkle 4s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: magicFloat 6s infinite ease-in-out;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -96,4 +173,4 @@ h4 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
+}
