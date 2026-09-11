@@ -1,9 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Harry P";
+  src: url("/fonts/HARRYP__.TTF") format("truetype");
+  font-display: swap;
+}
+
 @theme {
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Harry P", "Cinzel", Georgia, serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+
+  --text-xs: calc(0.75rem + 2px);
+  --text-sm: calc(0.875rem + 2px);
+  --text-base: calc(1rem + 2px);
+  --text-lg: calc(1.125rem + 2px);
+  --text-xl: calc(1.25rem + 2px);
+  --text-2xl: calc(1.5rem + 2px);
+  --text-3xl: calc(1.875rem + 2px);
+  --text-4xl: calc(2.25rem + 2px);
+  --text-5xl: calc(3rem + 2px);
+  --text-6xl: calc(3.75rem + 2px);
+  --text-7xl: calc(4.5rem + 2px);
 
   --color-navy-950: #05070f;
   --color-navy-900: #0a0e1f;
@@ -26,14 +44,20 @@ html {
 }
 
 body {
-  background-color: var(--color-navy-900);
+  background-color: var(--color-navy-950);
   color: var(--color-cream);
   font-family: var(--font-body);
+  font-size: 20px;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
+  letter-spacing: 0.04em;
 }
 
 ::selection {
@@ -45,7 +69,7 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-/* subtle grid texture used as a background layer */
+/* Subtle grid texture used as a background layer. */
 .bg-grid {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
@@ -56,13 +80,17 @@ h1, h2, h3, h4 {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
