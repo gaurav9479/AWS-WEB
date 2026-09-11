@@ -3,7 +3,7 @@ import Reveal from './common/Reveal'
 
 const STAGES = [
   { step: '01', title: 'Great Hall Gathering', desc: '15 Qualifying teams enter the venue for official welcome & project problem statement reveals.', icon: '🏰' },
-  { step: '02', title: '24-Hour Build Sprint', desc: 'Non-stop hackathon sprint with cloud mages, mentor checkpoints, & instant cloud deployment.', icon: '⚡' },
+  { step: '02', title: 'Final Magic Battle', desc: 'Non-stop hackathon sprint with cloud mages, mentor checkpoints, & instant cloud deployment.', icon: '⚡' },
   { step: '03', title: 'Grand Jury Judging', desc: 'Teams demonstrate live working prototypes directly to AWS experts & senior faculty judges.', icon: '⚖️' },
   { step: '04', title: 'House Cup & Trophy Reveal', desc: 'Announcement of the Champion Team, victorious House Cup winner, & goodies distribution.', icon: '🏆' },
 ]

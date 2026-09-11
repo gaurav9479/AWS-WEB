@@ -34,7 +34,7 @@ export default function HouseLeaderboard() {
             delay={0.1}
             className="mt-4 text-base sm:text-lg text-[#e8d7b5]/90 font-serif leading-relaxed"
           >
-            Teams will earn House Points as they submit projects in Round 1 (Owl Trials) and compete in Round 2 (Great Hall Championship). The house with the highest total score will claim the House Cup!
+            Teams will earn House Points as they submit projects in The Triwizard Challenge and compete in Grand Finale. The house with the highest total score will claim the House Cup!
           </Reveal>
 
           {/* Pending Tally Status */}

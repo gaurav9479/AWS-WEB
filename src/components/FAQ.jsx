@@ -5,31 +5,31 @@ import Reveal from './common/Reveal'
 const FAQS = [
   {
     q: 'What is Hogwarts SBG Hackfest?',
-    a: 'A weekend hackathon run by the AWS Student Builder Group at MNNIT Allahabad, structured into Round 1 (Online Owl Trials) and Round 2 (Offline Great Hall Championship).',
+    a: 'Hackfest 2026 is a Harry Potter-themed hackathon presented by the AWS Student Builder Group at MNNIT Allahabad. The main Triwizard Challenge is a 72-hour online hackathon, followed by an offline Grand Finale.',
   },
   {
     q: 'Who can participate in the Hogwarts Hackfest?',
-    a: 'Any MNNIT student from any branch or year. No prior hackathon or Hogwarts house experience is required!',
+    a: 'Undergraduate students can participate in Hackfest 2026. Teams can have 2 to 4 members.',
   },
   {
     q: 'How do we register our team?',
-    a: 'Use the Accept the Invitation button to open the official registration scroll and submit your team details.',
+    a: 'Use the official registration process provided by the organizers to submit your team details.',
   },
   {
     q: 'Is participation free?',
-    a: 'Yes — entry is completely free. Meals, workspace, mentor support, and cloud resources are provided throughout the Great Hall offline finals.',
+    a: 'The brochure does not specify an entry fee, so please refer to the official registration information for participation details.',
   },
   {
     q: 'What team size is permitted?',
-    a: 'Teams of 3 to 4 wizards. If you don’t have a full team yet, we will assist you in forming a squad during the Sorting Ceremony.',
+    a: 'Teams can have 2 to 4 members.',
   },
   {
     q: 'What happens after our team registers?',
-    a: 'You will receive an official confirmation owl email containing the trial timeline, house assignment guidelines, and pre-event checklist.',
+    a: 'Teams proceed through the Hackfest journey, including the Pitching Spell, Quests, the Top 50 selection, the 72-hour Triwizard Challenge, and the Top 15 selection before the Grand Finale.',
   },
   {
-    q: 'Where does the Round 2 Offline Championship take place?',
-    a: 'On the MNNIT Allahabad campus. The exact Great Hall venue details will be shared with the Top 15 qualifying teams.',
+    q: 'Where does the Grand Finale take place?',
+    a: 'The Grand Finale takes place offline on 1 November 2026. The brochure identifies MNNIT Allahabad as the venue, with the final event presented as an immersive Hogwarts-themed experience.',
   },
 ]
 

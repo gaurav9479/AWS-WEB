@@ -204,7 +204,7 @@ export default function SortingCeremony() {
             delay={0.1}
             className="mt-4 text-base sm:text-lg text-[#f4e8c1] font-serif leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
           >
-            Every participating team is allocated to one of four legendary Hogwarts houses exclusively by the Sorting Hat. Click below to begin the Sorting Ceremony and register your team!
+            Step into the world of Hogwarts and discover the four Houses of Hackfest 2026. Click below to begin the Sorting Ceremony and register your team!
           </Reveal>
 
           <Reveal delay={0.15} className="mt-6">
@@ -503,7 +503,7 @@ export default function SortingCeremony() {
                     <p className="text-[#f4e8c1]"><strong>Team Leader:</strong> {regData.leaderName} ({regData.leaderEmail})</p>
                     <p className="text-[#f4e8c1]"><strong>Track:</strong> {regData.track}</p>
                     <p className="text-[#d4af37] text-[11px] pt-2 border-t border-[#d4af37]/30">
-                      ✨ Your team is now registered for Round 1 (The Owl Trials). Check your inbox for trial schedule details!
+                      ✨ Your team is now registered for Round 1 (The Triwizard Challenge). Check your inbox for trial schedule details!
                     </p>
                   </div>
 

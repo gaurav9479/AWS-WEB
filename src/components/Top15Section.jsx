@@ -21,7 +21,7 @@ export default function Top15Section() {
         <div className="text-center max-w-3xl mx-auto">
           <Reveal as="div" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#d4af37]">
             <span>🏆</span>
-            <span>ROUND 1 QUALIFIERS</span>
+            <span>TOP 15 FINALISTS</span>
           </Reveal>
 
           <Reveal
@@ -37,13 +37,13 @@ export default function Top15Section() {
             delay={0.1}
             className="mt-4 text-base sm:text-lg text-[#e8d7b5]/90 font-serif leading-relaxed"
           >
-            The top 15 qualifying teams will be officially announced here after Round 1 (The Owl Trials) evaluation is completed.
+            The top 15 qualifying teams will be officially announced here after The Triwizard Challenge evaluation is completed.
           </Reveal>
 
           {/* Pending Status Badge */}
           <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#d4af37]/40 bg-[#10182b]/80 px-4 py-1.5 text-xs font-bold text-[#d4af37] uppercase tracking-wider">
             <span>⏳</span>
-            <span>QUALIFIERS ANNOUNCEMENT PENDING • OWL TRIALS IN PROGRESS</span>
+            <span>QUALIFIERS ANNOUNCEMENT PENDING • TRIWIZARD CHALLENGE IN PROGRESS</span>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default function Top15Section() {
             <h3 className="mt-1 font-harry text-3xl font-bold text-[#f4e8c1]/60">
               To Be Announced
             </h3>
-            <p className="mt-1 text-xs text-[#e8d7b5]/50 font-sans">Awaiting Owl Trial Evaluation</p>
+            <p className="mt-1 text-xs text-[#e8d7b5]/50 font-sans">Awaiting Triwizard Challenge Evaluation</p>
             <div className="mt-4 rounded bg-[#080b16]/70 p-2 text-xs font-semibold text-[#d4af37] border border-[#d4af37]/20">
               Score: Pending
             </div>
