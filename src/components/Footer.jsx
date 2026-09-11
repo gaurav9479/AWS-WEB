@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#trials" onClick={(e) => handleNavClick(e, '#trials')} className="transition hover:text-[#d4af37]">
-                  ⚡ Round 1: Owl Trials
+                  ⚡ The Triwizard Challenge
                 </a>
               </li>
               <li>
@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#championship" onClick={(e) => handleNavClick(e, '#championship')} className="transition hover:text-[#d4af37]">
-                  🏰 Round 2: Championship
+                  🏰 Grand Finale
                 </a>
               </li>
               <li>

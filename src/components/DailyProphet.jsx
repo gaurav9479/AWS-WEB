@@ -63,7 +63,7 @@ export default function DailyProphet() {
               THE DAILY PROPHET
             </h3>
             <div className="mt-2 flex items-center justify-between border-t border-b border-[#24170f] py-1 text-[11px] font-bold uppercase tracking-wider text-[#8c6a15] font-sans">
-              <span>PRICING: FREE INVITATION</span>
+              <span>PRICING: Free Invite</span>
               <span>READ & DISTRIBUTE</span>
               <span>MNNIT ALLAHABAD</span>
             </div>

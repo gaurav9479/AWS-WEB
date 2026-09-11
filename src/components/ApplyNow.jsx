@@ -3,9 +3,9 @@ import Reveal from './common/Reveal'
 import { staggerContainer, staggerItem } from './common/motion'
 
 const DETAILS = [
-  { label: 'Team Size', value: '3–4 Wizards per Team' },
-  { label: 'Competition Format', value: 'Online Trial → Offline Great Hall' },
-  { label: 'Entry Fee', value: 'Free Invitation' },
+  { label: 'Team Size', value: '2–4 Wizards per Team' },
+  { label: 'Competition Format', value: 'Online Trial → Offline Great Finale' },
+  { label: 'Eligibility', value: 'Undergraduate Wizards' },
 ]
 
 export default function ApplyNow() {

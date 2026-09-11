@@ -116,7 +116,7 @@ export default function AboutClub() {
             delay={0.1}
             className="mt-4 text-base sm:text-lg leading-relaxed text-[#e8d7b5]/90 font-serif"
           >
-            The AWS Student Builder Group at NIT Allahabad is an official AWS-affiliated body dedicated to raising cloud pioneers. Through ancient builder codices, hands-on hackathons, and collaborative wizardry, we equip students to engineer real-world systems.
+            The AWS Student Builder Group at MNNIT Allahabad is an official AWS-affiliated body dedicated to raising cloud pioneers. Through ancient builder codices, hands-on hackathons, and collaborative wizardry, we equip students to engineer real-world systems.
           </Reveal>
         </div>
 

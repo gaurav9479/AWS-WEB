@@ -40,7 +40,7 @@ export default function OwlPost() {
             delay={0.1}
             className="mt-4 text-base text-[#e8d7b5]/90 font-serif leading-relaxed"
           >
-            Have a question about the trials, house sorting, or event logistics? Dispatch an owl message to the AWS SBG team.
+            Have a question about the Triwizard Challenge, House sorting, or event logistics? Dispatch an owl message to the AWS SBG team.
           </Reveal>
         </div>
 
@@ -107,7 +107,7 @@ export default function OwlPost() {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Inquire about house registration, owl trials, or team mentorship..."
+                  placeholder="Inquire about House registration, the Triwizard Challenge, or team details..."
                   className="mt-2 w-full rounded-lg border border-[#d4af37]/40 bg-[#080b16]/90 p-3.5 text-sm text-[#f4e8c1] placeholder-[#e8d7b5]/40 focus:border-[#d4af37] focus:outline-none focus:ring-1 focus:ring-[#d4af37]"
                 />
               </div>
