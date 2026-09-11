@@ -156,9 +156,8 @@ export default function SortingCeremony() {
                     duration: 0.6,
                     delay: index * 0.08,
                   }}
-                  className={`relative flex flex-col sm:flex-row ${
-                    isRight ? 'sm:justify-end' : 'sm:justify-start'
-                  }`}
+                  className={`relative flex flex-col sm:flex-row ${isRight ? 'sm:justify-end' : 'sm:justify-start'
+                    }`}
                 >
 
                   {/* Timeline Node */}
@@ -168,9 +167,8 @@ export default function SortingCeremony() {
 
                   {/* Card */}
                   <div
-                    className={`w-full pl-14 sm:w-[44%] sm:pl-0 ${
-                      isRight ? 'sm:pr-0' : 'sm:pr-0'
-                    }`}
+                    className={`w-full pl-14 sm:w-[44%] sm:pl-0 ${isRight ? 'sm:pr-0' : 'sm:pr-0'
+                      }`}
                   >
                     <motion.div
                       whileHover={{
