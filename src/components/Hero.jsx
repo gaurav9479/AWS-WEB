@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import OrbitChip from './visuals/OrbitChip'
 import { staggerContainer, staggerItem } from './common/motion'
@@ -79,14 +80,13 @@ export default function Hero() {
 
           <span>AWS STUDENT BUILDER GROUP • MNNIT ALLAHABAD</span>
         </motion.div>
-
-        {/* Main Heading */}
-        <motion.h1
+        
+        <motion.img
           variants={staggerItem}
-          className="mt-6 bg-gradient-to-b from-[#ffffff] via-[#f4e8c1] to-[#d4af37] bg-clip-text font-harry text-6xl font-bold tracking-wider text-transparent drop-shadow-[0_6px_25px_rgba(0,0,0,0.98)] sm:text-8xl md:text-9xl"
-        >
-          HACKFEST 2026
-        </motion.h1>
+          src="/images/hackfest/hackfest_logo.png"
+          alt="HackFest 1.0"
+          className="mt-6 w-64 sm:w-80 md:w-[420px] lg:w-[500px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)]"
+        />
 
         {/* Theme Label */}
         <motion.div
@@ -94,9 +94,8 @@ export default function Hero() {
           className="mt-1 flex items-center justify-center gap-3"
         >
           <span className="h-0.5 w-12 bg-gradient-to-r from-transparent to-[#d4af37]" />
-
-          <span className="font-display text-sm font-bold uppercase tracking-widest text-[#d4af37] drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
-            HOGWARTS LEGACY • THE MAGIC BEGINS
+          <span className="font-display text-sm font-bold tracking-widest text-[#d4af37] uppercase drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
+            72-HOURS HACKATHON
           </span>
 
           <span className="h-0.5 w-12 bg-gradient-to-l from-transparent to-[#d4af37]" />
@@ -152,13 +151,8 @@ export default function Hero() {
             onClick={handleEnterMagic}
             className="group relative flex items-center gap-2.5 rounded-md border-2 border-[#d4af37] bg-gradient-to-r from-[#24170f] via-[#5c3b80] to-[#24170f] px-8 py-3.5 text-sm font-bold uppercase tracking-widest text-[#f4e8c1] shadow-[0_0_35px_rgba(212,175,55,0.6)] transition hover:border-[#ffffff] hover:shadow-[0_0_55px_rgba(212,175,55,0.9)]"
           >
-            <span>ENTER THE MAGIC</span>
-
-            <svg
-              className="h-4 w-4 text-[#d4af37] transition-transform duration-200 group-hover:translate-x-1"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
+            <span>REGISTER NOW</span>
+            <svg className="h-4 w-4 text-[#d4af37] transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z" />
             </svg>
           </motion.a>
@@ -170,17 +164,8 @@ export default function Hero() {
             href="#trials"
             className="flex items-center gap-2 rounded-md border border-[#d4af37]/80 bg-[#080b16]/90 px-8 py-3.5 text-sm font-bold uppercase tracking-widest text-[#e8d7b5] backdrop-blur-md transition hover:border-[#d4af37] hover:bg-[#10182b] hover:text-[#f4e8c1]"
           >
-            <span>VIEW THE TRIALS</span>
-
-            <svg
-              className="h-4 w-4 text-[#d4af37]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <span>EXPLORE HACKFEST</span>
+            <svg className="h-4 w-4 text-[#d4af37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
           </motion.a>
@@ -197,3 +182,4 @@ export default function Hero() {
     </section>
   )
 }
+
