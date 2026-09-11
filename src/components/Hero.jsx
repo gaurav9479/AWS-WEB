@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import OrbitChip from './visuals/OrbitChip'
 import { staggerContainer, staggerItem } from './common/motion'
@@ -54,19 +55,18 @@ export default function Hero() {
           </svg>
           <span>AWS STUDENT BUILDER GROUP • MNNIT ALLAHABAD</span>
         </motion.div>
-
-        {/* Hogwarts Main Header */}
-        <motion.h1
+        
+        <motion.img
           variants={staggerItem}
-          className="mt-6 font-harry text-6xl font-bold tracking-wider text-transparent bg-gradient-to-b from-[#ffffff] via-[#f4e8c1] to-[#d4af37] bg-clip-text drop-shadow-[0_6px_25px_rgba(0,0,0,0.98)] sm:text-8xl md:text-9xl"
-        >
-          WELCOME TO HOGWARTS
-        </motion.h1>
+          src="/images/hackfest/hackfest_logo.png"
+          alt="HackFest 1.0"
+          className="mt-6 w-64 sm:w-80 md:w-[420px] lg:w-[500px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)]"
+        />
 
         <motion.div variants={staggerItem} className="flex items-center justify-center gap-3 mt-1">
           <span className="h-0.5 w-12 bg-gradient-to-r from-transparent to-[#d4af37]" />
           <span className="font-display text-sm font-bold tracking-widest text-[#d4af37] uppercase drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
-            SBG HACKFEST 2026
+            72-HOURS HACKATHON
           </span>
           <span className="h-0.5 w-12 bg-gradient-to-l from-transparent to-[#d4af37]" />
         </motion.div>
@@ -75,8 +75,18 @@ export default function Hero() {
           variants={staggerItem}
           className="mt-6 max-w-2xl text-base text-[#ffffff] sm:text-xl font-serif leading-relaxed drop-shadow-[0_3px_10px_rgba(0,0,0,0.98)] bg-[#080b16]/40 p-4 rounded-xl backdrop-blur-sm border border-[#d4af37]/30"
         >
-          A magical technology competition where builders, innovators, and developers enter the world of Hogwarts. Form your team, get sorted, conquer the trials, and claim the legendary House Cup.
+          A Harry Potter-themed 72-hour online hackathon where teams wield AWS's
+          “Magic Infrastructure” across AI/ML, Cloud, DevOps, and Cybersecurity
+          to solve real-world challenges.
         </motion.p>
+
+        {/* HackFest Tagline */}
+        <motion.div
+          variants={staggerItem}
+          className="mt-5 font-display text-base sm:text-lg font-bold tracking-widest text-[#f4e8c1] uppercase drop-shadow-[0_3px_10px_rgba(0,0,0,0.98)]"
+        >
+          72 Hours. 15 Teams. 1 House Cup. 1 Champion.
+        </motion.div>
 
         {/* Primary & Secondary CTAs */}
         <motion.div variants={staggerItem} className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -87,7 +97,7 @@ export default function Hero() {
             onClick={handleEnterMagic}
             className="group relative flex items-center gap-2.5 rounded-md border-2 border-[#d4af37] bg-gradient-to-r from-[#24170f] via-[#5c3b80] to-[#24170f] px-8 py-3.5 text-sm font-bold uppercase tracking-widest text-[#f4e8c1] shadow-[0_0_35px_rgba(212,175,55,0.6)] transition hover:shadow-[0_0_55px_rgba(212,175,55,0.9)] hover:border-[#ffffff]"
           >
-            <span>ENTER THE MAGIC</span>
+            <span>REGISTER NOW</span>
             <svg className="h-4 w-4 text-[#d4af37] transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z" />
             </svg>
@@ -99,7 +109,7 @@ export default function Hero() {
             href="#trials"
             className="flex items-center gap-2 rounded-md border border-[#d4af37]/80 bg-[#080b16]/90 px-8 py-3.5 text-sm font-bold uppercase tracking-widest text-[#e8d7b5] backdrop-blur-md transition hover:border-[#d4af37] hover:text-[#f4e8c1] hover:bg-[#10182b]"
           >
-            <span>VIEW THE TRIALS</span>
+            <span>EXPLORE HACKFEST</span>
             <svg className="h-4 w-4 text-[#d4af37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
             </svg>
@@ -114,3 +124,4 @@ export default function Hero() {
     </section>
   )
 }
+
